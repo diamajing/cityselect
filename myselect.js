@@ -5,7 +5,6 @@
             prov: null,
             city: null,
             dist: null,
-            // nodata:null,
             required: true
         }, settings);
         var _this = this;
