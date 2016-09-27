@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省级联动</title>
+</head>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/myselect.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#city_1").citySelect({
+            required: false
+        });
+        $("#city_2").citySelect({
+            prov: "北京",
+        });
+
+        $("#city_3").citySelect({
+            prov: "湖南",
+            city: "长沙"
+        });
+        $("#city_4").citySelect({
+            prov: "湖南",
+            city: "长沙",
+            dist: "岳麓区",
+        });
+
+        $("#city_5").citySelect({
+            url: {
+                "citylist": [
+                    {
+                        "p": "前端技术",
+                        "c": [{"n": "HTML"}, {"n": "CSS", "a": [{"s": "CSS2.0"}, {"s": "CSS3.0"}]}, {"n": "JAVASCIPT"}]
+                    },
+                    {"p": "编程语言", "c": [{"n": "C"}, {"n": "C++"}, {"n": "Objective-C"}, {"n": "PHP"}, {"n": "JAVA"}]},
+                    {"p": "数据库", "c": [{"n": "Mysql"}, {"n": "SqlServer"}, {"n": "Oracle"}, {"n": "DB2"}]},
+                ]
+            },
+            prov: "",
+            city: "",
+            dist: "",
+        });
+    });
+</script>
+<body>
+<div id="main">
+    <p>三级联动</p>
+    <div id="city_5">
+        <select class="prov"></select>
+        <select class="city" disabled="disabled"></select>
+        <select class="dist" disabled="disabled"></select>
+    </div>
+</div>
+</div>
+</body>
+</html>
